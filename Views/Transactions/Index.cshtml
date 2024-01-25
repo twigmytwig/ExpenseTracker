@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ExpenseTracker.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Transactions for @ViewBag.Account.AccountName</h1>
+<input type="file" id="file" accept=".csv" />
+<button onclick="Upload()" id="buttonFile">Upload Transactions</button>
+<hr />
+
+<p>
+    <a asp-route-accountId="@ViewBag.AccountId" asp-action="Create">Create New Transaction</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isReoccuring)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                Purchaser
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isReoccuring)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @if(item.AccountUsersId is not null){
+                        @Html.DisplayFor(modelItem => item.AccountUsers.Id)
+                    }
+                else
+                {
+                    <p>None Specified</p>
+                }
+                
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+    window.onload = function () {
+        var buttonFile = document.getElementById("buttonFile");
+        var file = document.getElementById("file").files[0];
+    };
+
+    function Upload(){
+
+        var fileInput = document.getElementById("file");
+        var file = fileInput.files[0];
+        let formData = new FormData();
+        formData.append("formData",file);
+        let id = @ViewBag.AccountId;
+        formData.append("accountId", id);
+
+
+        $.ajax({
+            url: '@Url.Action("Upload", "Transactions")',
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            success: function ($data) {
+
+            }
+        });
+    }
+</script>
