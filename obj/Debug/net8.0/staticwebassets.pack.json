@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\js\\TransactionReports.js",
+      "PackagePath": "staticwebassets\\js\\TransactionReports.js"
+    },
+    {
+      "Id": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\js\\TransactionReportsCharts.js",
+      "PackagePath": "staticwebassets\\js\\TransactionReportsCharts.js"
+    },
+    {
+      "Id": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\js\\TransactionReportsMaster.js",
+      "PackagePath": "staticwebassets\\js\\TransactionReportsMaster.js"
+    },
+    {
       "Id": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,0 +1,49 @@
+﻿@model ExpenseTracker.ViewModels.AccountReportVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Reports</h1>
+
+<div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 50%">
+    <i class="fa fa-calendar"></i>&nbsp;
+    <span></span> <i class="fa fa-caret-down"></i>
+</div>
+
+@foreach (Category category in Model.Categories)
+{
+    <p>@category.Name : </p>
+}
+<hr />
+<div style="float: right">
+    <p id="expenseTotal">Total Expense: --</p>
+    <p id="profitTotal">Total Profit: --</p>
+    <p id="netTotal">Net Gain/Loss: --</p>
+</div>
+<div >
+    <canvas id="myChart" style="width: 50%"></canvas>
+</div>
+
+
+@section Scripts{
+    @* chart.js *@
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="text/javascript" src="/js/TransactionReports.js"></script>
+    <script type="text/javascript" src="/js/TransactionReportsMaster.js"></script>
+    <script type="text/javascript" src="/js/TransactionReportsCharts.js"></script>
+
+    @* date range picker *@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <script>
+        //This kicks off the other js files
+        let transactionData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Transactions));
+        let categoryData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Categories));
+        CreateTransactions(transactionData); //located in TransactionReports.js
+        CreateCategories(categoryData);
+    </script>
+}

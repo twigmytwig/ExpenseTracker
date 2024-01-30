@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ExpenseTracker.DAL;
 using ExpenseTracker.Models;
 using System.Security.Claims;
+using ExpenseTracker.ViewModels;
 
 namespace ExpenseTracker.Controllers
 {
@@ -33,7 +34,7 @@ namespace ExpenseTracker.Controllers
         }
 
         // GET: Accounts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Report(int? id)
         {
             if (id == null)
             {
@@ -47,7 +48,15 @@ namespace ExpenseTracker.Controllers
                 return NotFound();
             }
 
-            return View(account);
+            AccountReportVM vm = new AccountReportVM()
+            {
+                Account = account,
+                Transactions = await _context.Transactions.Where(x => x.AccountId == id).ToListAsync(),
+                Categories = await _context.Categories.ToListAsync(),
+                ChartData = null
+            };
+
+            return View(vm);
         }
 
         // GET: Accounts/Create
@@ -162,6 +171,12 @@ namespace ExpenseTracker.Controllers
         private bool AccountExists(int id)
         {
             return _context.Accounts.Any(e => e.Id == id);
+        }
+
+        [HttpGet]
+        public Task<JsonResult> GatherChartData(int? accountId)
+        {
+            return null;
         }
     }
 }

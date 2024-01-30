@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ecoVAI75ZxQNTCgRZYFI3gQqnxcYkcbwII8nACjwjo2umfRq91e8Qw/VIoZOJ0YUT1yVHBfsjW/yl1HW+/vq/w==",
+  "dgSpecHash": "I/KELgRd7le7qsJoHYgvpqFBcVE9MTTqWQEd0dtM3QWnQBjqmhg2Az9QkbIybVf8i5G6NsL7/XznokKulKOGwg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\ExpenseTracker.csproj",
   "expectedPackageFiles": [
@@ -57,6 +57,10 @@
     "C:\\Users\\Trevor\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\8.0.1\\microsoft.aspnetcore.authentication.facebook.8.0.1.nupkg.sha512",
+    "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.1\\microsoft.aspnetcore.authentication.google.8.0.1.nupkg.sha512",
+    "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.authentication.microsoftaccount\\8.0.1\\microsoft.aspnetcore.authentication.microsoftaccount.8.0.1.nupkg.sha512",
+    "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.authentication.twitter\\8.0.1\\microsoft.aspnetcore.authentication.twitter.8.0.1.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.1\\microsoft.aspnetcore.authorization.8.0.1.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.1\\microsoft.aspnetcore.components.8.0.1.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.1\\microsoft.aspnetcore.components.analyzers.8.0.1.nupkg.sha512",
@@ -130,6 +134,7 @@
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.typescript.msbuild\\5.3.3\\microsoft.typescript.msbuild.5.3.3.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\8.0.0\\microsoft.visualstudio.web.codegeneration.8.0.0.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\8.0.0\\microsoft.visualstudio.web.codegeneration.core.8.0.0.nupkg.sha512",
     "C:\\Users\\Trevor\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\8.0.0\\microsoft.visualstudio.web.codegeneration.design.8.0.0.nupkg.sha512",
