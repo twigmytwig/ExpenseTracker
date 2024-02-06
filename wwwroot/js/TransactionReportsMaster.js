@@ -1,8 +1,13 @@
 ﻿window.addEventListener("load", (event) => {
     CalcTotalExpenseAndProfit(transactionList); 
-    //GetCategoriesNames(categories);
+    CreateCategoryByDateRangeLineChart();
     CreateChart();
+    CreatePieChart();
+    
 });
+
+
+
 
 //Standard date range
 $(function () {
@@ -41,6 +46,13 @@ $(function () {
 
 });
 
-//$('input[name="daterange"]').addEventListener("update", (event) => {
-
-//});
+function toggleReports(reportId) {
+    let report = document.getElementById(reportId);
+    if (report.style.display != 'none') {
+        report.style.display = 'none';
+        //report.style.visibility = 'hidden';
+    }
+    else {
+        report.style.display = '';
+    }
+}

@@ -5,24 +5,57 @@
 }
 
 <h1>Reports</h1>
-
-<div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 50%">
-    <i class="fa fa-calendar"></i>&nbsp;
-    <span></span> <i class="fa fa-caret-down"></i>
-</div>
-
-@foreach (Category category in Model.Categories)
-{
-    <p>@category.Name : </p>
-}
 <hr />
-<div style="float: right">
-    <p id="expenseTotal">Total Expense: --</p>
-    <p id="profitTotal">Total Profit: --</p>
-    <p id="netTotal">Net Gain/Loss: --</p>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-4">
+            <div id="datePicker">
+                <label class="form-label">Date range for data: </label>
+                <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 50%">
+                    <i class="fa fa-calendar"></i>&nbsp;
+                    <span></span> <i class="fa fa-caret-down"></i>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="col-4">
+            <div id="checkBoxes">
+                <label for="pieChart">
+                    <input type="checkbox" checked="checked" id="pieChartToggler" onclick="toggleReports('pieChartDiv')" />
+                    Pie chart
+                </label>
+
+                <label for="barChart">
+                    <input checked="checked" type="checkbox" id="barChart" />
+                    Bar Chart
+                </label>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div style="float: right">
+                <p id="expenseTotal">Total Expense: --</p>
+                <p id="profitTotal">Total Profit: --</p>
+                <p id="netTotal">Net Gain/Loss: --</p>
+            </div>
+        </div>
+    </div>
+    
 </div>
-<div >
+
+
+
+<hr style="clear:both" />
+<div id="pieChartDiv" style="float: right;position: relative; height:100%; width:40%">
+    <canvas id="pieChart"></canvas>
+</div>
+<div style="position: relative; height:100%; width:45%">
     <canvas id="myChart" style="width: 50%"></canvas>
+</div>
+<hr style="clear: both;"/>
+<div style=" position: relative; height:100%; width:45%">
+    <canvas id="lineCategoryByDate" style="width: 50%"></canvas>
 </div>
 
 
@@ -38,8 +71,10 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="/css/TransactionReports.css" />
 
     <script>
+
         //This kicks off the other js files
         let transactionData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Transactions));
         let categoryData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Categories));

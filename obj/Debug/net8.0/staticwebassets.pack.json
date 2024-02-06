@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\ExpenseTracker.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\css\\TransactionReports.css",
+      "PackagePath": "staticwebassets\\css\\TransactionReports.css"
+    },
+    {
       "Id": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

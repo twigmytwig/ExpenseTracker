@@ -34,18 +34,18 @@ namespace ExpenseTracker.Controllers
             //test
             var transactions = await _context.Transactions.ToListAsync();
 
-            foreach (var trans in transactions)
-            {
-                //Load sample data
-                var sampleData = new TransactionSortingMLModel.ModelInput()
-                {
-                    Col0 = trans.Notes,
-                };
+            //foreach (var trans in transactions)
+            //{
+            //    //Load sample data
+            //    var sampleData = new TransactionSortingMLModel.ModelInput()
+            //    {
+            //        Col0 = trans.Notes,
+            //    };
 
-                //Load model and predict output
-                trans.CategoryId = (int)TransactionSortingMLModel.Predict(sampleData).PredictedLabel;
-            }
-            await _context.SaveChangesAsync();
+            //    //Load model and predict output
+            //    trans.CategoryId = (int)TransactionSortingMLModel.Predict(sampleData).PredictedLabel;
+            //}
+            //await _context.SaveChangesAsync();
             //test ml
 
 

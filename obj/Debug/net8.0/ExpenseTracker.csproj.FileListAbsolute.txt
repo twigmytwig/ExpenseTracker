@@ -322,3 +322,8 @@ C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\Microsoft.AspNetCor
 C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Twitter.dll
 C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\package-lock.json
 C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\package.json
+C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\Microsoft.ML.LightGbm.dll
+C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\runtimes\linux-x64\native\lib_lightgbm.so
+C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\runtimes\osx-x64\native\lib_lightgbm.dylib
+C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\runtimes\win-x64\native\lib_lightgbm.dll
+C:\Users\Trevor\source\repos\ExpenseTracker\bin\Debug\net8.0\runtimes\win-x64\native\lightgbm.exe

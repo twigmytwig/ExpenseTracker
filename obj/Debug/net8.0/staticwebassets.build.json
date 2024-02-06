@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uQOvPTEy3tcwQXTZX9qN57tvjx5P8wfu6Ud2oY/Wm1Q=",
+  "Hash": "dXOFfeHpon9R27ab5WKo2rM3pZxCnFoRdo/aJwj139M=",
   "Source": "ExpenseTracker",
   "BasePath": "_content/ExpenseTracker",
   "Mode": "Default",
@@ -1250,6 +1250,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\css\\TransactionReports.css",
+      "SourceId": "ExpenseTracker",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\",
+      "BasePath": "_content/ExpenseTracker",
+      "RelativePath": "css/TransactionReports.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\TransactionReports.css"
     },
     {
       "Identity": "C:\\Users\\Trevor\\source\\repos\\ExpenseTracker\\wwwroot\\favicon.ico",
