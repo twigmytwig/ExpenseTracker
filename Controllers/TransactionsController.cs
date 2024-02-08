@@ -33,7 +33,7 @@ namespace ExpenseTracker.Controllers
         {
             //test
             var transactions = await _context.Transactions.ToListAsync();
-
+            //int i = 0;
             //foreach (var trans in transactions)
             //{
             //    //Load sample data
@@ -43,7 +43,25 @@ namespace ExpenseTracker.Controllers
             //    };
 
             //    //Load model and predict output
+            //    var tempId = trans.CategoryId;
             //    trans.CategoryId = (int)TransactionSortingMLModel.Predict(sampleData).PredictedLabel;
+            //    if (trans.CategoryId != tempId)
+            //    {
+            //        //if (trans.CategoryId != 1 && trans.CategoryId != 2 && trans.CategoryId != 3 && trans.CategoryId != 4 && trans.CategoryId != 5 && trans.CategoryId != 6 && trans.CategoryId != 7 && trans.CategoryId != 8 && trans.CategoryId != 1002)
+            //        //{
+            //        //    var temp = trans.CategoryId;
+
+            //        //    var strr = new TransactionSortingMLModel.ModelInput()
+            //        //    {
+            //        //        Col0 = trans.Notes,
+
+            //        //    };
+            //        //    var tst2 = TransactionSortingMLModel.Predict(strr).PredictedLabel;
+            //        //    var test = (int)TransactionSortingMLModel.Predict(sampleData).PredictedLabel;
+            //        //}
+            //        i++;
+            //    }
+            //    _context.Update(trans);
             //}
             //await _context.SaveChangesAsync();
             //test ml

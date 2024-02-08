@@ -27,8 +27,12 @@
                 </label>
 
                 <label for="barChart">
-                    <input checked="checked" type="checkbox" id="barChart" />
+                    <input checked="checked" type="checkbox" id="barChart" onclick="toggleReports('barChartDiv')" />
                     Bar Chart
+                </label>
+                <label for="barChart">
+                    <input checked="checked" type="checkbox" id="barChart" onclick="toggleReports('lineChartDiv')" />
+                    Line Chart
                 </label>
             </div>
         </div>
@@ -50,11 +54,11 @@
 <div id="pieChartDiv" style="float: right;position: relative; height:100%; width:40%">
     <canvas id="pieChart"></canvas>
 </div>
-<div style="position: relative; height:100%; width:45%">
+<div id="barChartDiv" style="position: relative; height:100%; width:45%">
     <canvas id="myChart" style="width: 50%"></canvas>
 </div>
 <hr style="clear: both;"/>
-<div style=" position: relative; height:100%; width:45%">
+<div id="lineChartDiv" style=" position: relative; height:100%; width:45%">
     <canvas id="lineCategoryByDate" style="width: 50%"></canvas>
 </div>
 

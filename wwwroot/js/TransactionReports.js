@@ -76,24 +76,34 @@ function GatherCategoryChartData(transList) {
     OrganizeChartData(categoryTransData);
 }
 
-function GatherCategoryDataByMonth(categoryId, startDate, endDate) {
-    let tempTransactionList = [];
-    const categoryDataByMonth = new Array(0,0,0,0,0,0,0,0,0,0,0,0);
+function GatherCategoryDataByMonth(startDate, endDate) {
+    let masterObj = [];
+    for (let x = 0; x < categories.length; x++) {
+        let categoryId = categories[x].Id;
+        let tempTransactionList = [];
+        let tempDataObject = {}
+        const categoryDataByMonth = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
-    for (let i = 0; i < transactionList.length; i++) {
-        let test = Date.parse(transactionList[i].date);
-        if (transactionList[i].categoryId == categoryId && Date.parse(transactionList[i].date) <= endDate && Date.parse(transactionList[i].date) >= startDate) {
-            tempTransactionList.push(transactionList[i]);
+        for (let i = 0; i < transactionList.length; i++) {
+
+            
+            if (transactionList[i].categoryId == categoryId && Date.parse(transactionList[i].date) <= endDate && Date.parse(transactionList[i].date) >= startDate) {
+                tempTransactionList.push(transactionList[i]);
+            }
         }
+        // want obkect like {data: data, label: lable}
+        for (let i = 0; i < tempTransactionList.length; i++) {
+            let tempDate = Date.parse(tempTransactionList[i].date);
+            let tempMonth = new Date(tempDate).getMonth(); //0-11
+            let tempValue = categoryDataByMonth[tempMonth];
+            tempValue += tempTransactionList[i].amount;
+            categoryDataByMonth[tempMonth] = tempValue;
+        }
+        tempDataObject.data = categoryDataByMonth;
+        tempDataObject.label = categories[x].Name;
+        masterObj.push(tempDataObject);
     }
-
-    for (let i = 0; i < tempTransactionList.length; i++) {
-        let tempDate = Date.parse(tempTransactionList[i].date);
-        let tempMonth = new Date(tempDate).getMonth(); //0-11
-        let tempValue = categoryDataByMonth[tempMonth];
-        tempValue += tempTransactionList[i].amount;
-        categoryDataByMonth[tempMonth] = tempValue;
-    }
-
-    return categoryDataByMonth;
+    
+    return masterObj;
+    //return categoryDataByMonth;
 }

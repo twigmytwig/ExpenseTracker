@@ -58,19 +58,24 @@ function CreateChart() { //THIS IS A BAR CHART, i JUST AM STUPID
 function CreateCategoryByDateRangeLineChart() {
     let curDate = new Date();
     let yearPriorDate = new Date(new Date().setFullYear(new Date().getFullYear() - 1));
-    let tempData = GatherCategoryDataByMonth(1, yearPriorDate, curDate);
+    let tempData = GatherCategoryDataByMonth(yearPriorDate, curDate);
     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     chart = new Chart(ctxCategoryByDate, {
         type: 'line',
         data: {
             labels: months,
-            datasets: [{
-                label: 'Category Trend by Month',
-                data: tempData,
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            }]
+            datasets: tempData//[  THIS IS WHERE I LEFT OFF
+            //    {
+            //    label: 'Category Trend by Month',
+            //    data: tempData,
+            //    fill: false,
+            //    borderColor: 'rgb(75, 192, 192)',
+            //    tension: 0.1
+            //    },
+            //    {
+
+            //    }
+            //]
         },
         options: {
 
